@@ -5,6 +5,6 @@ public class caesarcipher
     {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter message:");
-        
+        String n = in.nextLine();
     }
 }
