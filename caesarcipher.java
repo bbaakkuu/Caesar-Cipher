@@ -11,7 +11,6 @@ public class caesarcipher
         for(i = 0; i<l; i++)
         {
             sep = n.charAt(i);
-            
         }
     }
 }
