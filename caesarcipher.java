@@ -2,21 +2,28 @@
 import java.util.Scanner;
 public class caesarcipher
 {
+    static char library(char x, int len){
+        int ch = (int)x;
+        return 'a';
+    }
     public static void main(String[] args) 
     {
         Scanner in = new Scanner(System.in);
-        System.out.print("Enter message:");
+        System.out.print("Enter message: ");
         String n = in.nextLine();
-        System.out.println("Enter no. of shifts:");
+        System.out.print("Enter no. of shifts: ");
         int key = in.nextInt();
         int l = n.length();
-        int i, convert, add;char sep, store;
+        int i;char sep, store;
         for(i = 0; i<l; i++)
         {
             sep = n.charAt(i);
-            store = sep;
-            convert = (int) store;
-            add = convert + key;
+            store = library(sep, l);
         }
     }
 }
+/*
+ * for(int ele: arr){
+ * 
+ * }
+ */
