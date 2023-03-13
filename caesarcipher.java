@@ -10,11 +10,13 @@ public class caesarcipher
         System.out.println("Enter no. of shifts:");
         int key = in.nextInt();
         int l = n.length();
-        int i;char sep, store;
+        int i, convert;char sep, store;
         for(i = 0; i<l; i++)
         {
             sep = n.charAt(i);
             store = sep;
+            convert = (int) store;
+
         }
     }
 }
