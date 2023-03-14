@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class caesarcipher
 {
     private char [] alpha = {'A','B','C','D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' '};
-    private int []encrpt;
+    private int []encrpt = new int[1000];
     void initializer(int index, int val){
         encrpt[index] = val;
     }
