@@ -11,7 +11,7 @@ public class caesarcipher
         encrpt[index] = val;
     }
 
-    static char library(string x, int len, int key){
+    static char library(char x, int len, int key){
         caesarcipher cc = new caesarcipher(len);
         int in=0;
         for(int j=0; j<len; j++){
