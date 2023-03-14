@@ -5,7 +5,7 @@ public class caesarcipher
     private char [] alpha = {'A','B','C','D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' '};
     private int []encrpt;
     caesarcipher(int len){
-        int []encrpt = new int [len];
+        []encrpt = new int [len];
     }
     void initializer(int index, int val){
         encrpt[index] = val;
