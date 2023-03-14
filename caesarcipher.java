@@ -2,8 +2,26 @@
 import java.util.Scanner;
 public class caesarcipher
 {
-    static char library(char x, int len){
-        int ch = (int)x;
+    private char [] alpha = {'A','B','C','D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' '};
+    private int []encrpt;
+    caesarcipher(int len){
+        int []encrpt = new int [len];
+    }
+    void initializer(int index, int val){
+        encrpt[index] = val;
+    }
+
+    static char library(string x, int len, int key){
+        caesarcipher cc = new caesarcipher(len);
+        int in=0;
+        for(int j=0; j<len; j++){
+            for(int i=0; i<=26; i++){
+                if(cc.alpha[i] == x){
+                    in = i+key;
+                }
+                cc.initializer(j, in);
+            }
+        }
         return 'a';
     }
     public static void main(String[] args) 
@@ -22,6 +40,7 @@ public class caesarcipher
         }
     }
 }
+
 /*
  * for(int ele: arr){
  * 
