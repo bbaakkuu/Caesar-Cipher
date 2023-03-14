@@ -4,15 +4,12 @@ public class caesarcipher
 {
     private char [] alpha = {'A','B','C','D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' '};
     private int []encrpt;
-    caesarcipher(int len){
-        []encrpt = new int [len];
-    }
     void initializer(int index, int val){
         encrpt[index] = val;
     }
 
     static char library(char x, int len, int key){
-        caesarcipher cc = new caesarcipher(len);
+        caesarcipher cc = new caesarcipher();
         int in=0;
         for(int j=0; j<len; j++){
             for(int i=0; i<=26; i++){
@@ -36,7 +33,7 @@ public class caesarcipher
         for(i = 0; i<l; i++)
         {
             sep = n.charAt(i);
-            store = library(sep, l);
+            store = library(sep, l, key);
         }
     }
 }
