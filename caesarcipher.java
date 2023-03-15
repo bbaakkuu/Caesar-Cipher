@@ -3,40 +3,17 @@
 import java.util.Scanner;
 public class caesarcipher
 {
-    private char [] alpha = {'A','B','C','D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' '};
-    private int []encrpt;
-
-    void Setter_encrpt(int l){
-        encrpt = new int[l-1];
-    }
-
-    static void library(char x, int len, int key){
-        caesarcipher cc = new caesarcipher();
-        int in=0;
-        for(int j=0; j<len; j++){     
-            for(int i=0; i<=26; i++){
-                in=0;
-                if(cc.alpha[i] == x){  
-                    if(i==26)
-                        cc.encrpt[j] = 26;
-                    else{
-                        in = i+key;
-                        cc.encrpt[j] = in;
-                    }
-                }
-            }
+    private static String library(String x, int key){
+        String cipher = "";
+        x = x.toUpperCase();
+        char e = 'A';
+        for (int i=0; i<x.length(); i++) {
+            e = x.charAt(i);
+            if (Character.isLetter(e))
+                e = (char) ('A' + (e - 'A' + key) % 26);
+            cipher += e;
         }
-        setup(cc.encrpt, len);
-    }
-    static char[] setup(int []arr, int l){
-        caesarcipher cc = new caesarcipher();
-        char []re = new char[l];
-        int i=0;
-        for(int n: arr){
-            re[i] = cc.alpha[n];
-            i++;
-        }
-        return re;
+        return cipher;
     }
     public static void main(String[] args)
     {
@@ -46,14 +23,8 @@ public class caesarcipher
         String n = in.nextLine();
         System.out.print("Enter no. of shifts: ");
         int key = in.nextInt();
-        int len = n.length();
-        cc.Setter_encrpt(len);
-        int i;char sep;
-        for(i = 0; i<len; i++)
-        {
-            sep = n.charAt(i);
-            library(sep, len, key);
-        }
+        String cipher = cc.library(n, key);
+        System.out.println(cipher);
         in.close();
     }
 }
