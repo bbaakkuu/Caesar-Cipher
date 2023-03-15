@@ -7,16 +7,16 @@ public class caesarcipher
     private int []encrpt;
 
     void Setter_encrpt(int l){
-        encrpt = new int[l];
+        encrpt = new int[l-1];
     }
 
     static void library(char x, int len, int key){
         caesarcipher cc = new caesarcipher();
-        cc.Setter_encrpt(len);
         int in=0;
-        for(int j=0; j<len; j++){
+        for(int j=0; j<len; j++){     
             for(int i=0; i<=26; i++){
-                if(cc.alpha[i] == x){
+                in=0;
+                if(cc.alpha[i] == x){  
                     if(i==26)
                         cc.encrpt[j] = 26;
                     else{
@@ -38,14 +38,16 @@ public class caesarcipher
         }
         return re;
     }
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
+        caesarcipher cc = new caesarcipher();
         Scanner in = new Scanner(System.in);
         System.out.print("Enter message: ");
         String n = in.nextLine();
         System.out.print("Enter no. of shifts: ");
         int key = in.nextInt();
         int len = n.length();
+        cc.Setter_encrpt(len);
         int i;char sep;
         for(i = 0; i<len; i++)
         {
@@ -58,6 +60,6 @@ public class caesarcipher
 
 /*
  * for(int ele: arr){
- * 
+ *
  * }
  */
