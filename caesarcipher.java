@@ -3,23 +3,31 @@ import java.util.Scanner;
 public class caesarcipher
 {
     private char [] alpha = {'A','B','C','D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' '};
-    private int []encrpt = new int[1000];
-    void initializer(int index, int val){
-        encrpt[index] = val;
+    private int []encrpt;
+    void Setter_encrpt(int len){
+        encrpt = new int [len];
     }
 
-    static char library(char x, int len, int key){
+    static void library(char x, int len, int key){
         caesarcipher cc = new caesarcipher();
+        cc.Setter_encrpt(len);
         int in=0;
         for(int j=0; j<len; j++){
             for(int i=0; i<=26; i++){
                 if(cc.alpha[i] == x){
-                    in = i+key;
+                    if(i==26)
+                        cc.encrpt[j] = 26;
+                    else{
+                        in = i+key;
+                        cc.encrpt[j] = in;
+                    }
                 }
-                cc.initializer(j, in);
             }
         }
-        return 'a';
+    }
+    static char[] setup(int []arr){
+        
+        return null;
     }
     public static void main(String[] args) 
     {
@@ -28,13 +36,14 @@ public class caesarcipher
         String n = in.nextLine();
         System.out.print("Enter no. of shifts: ");
         int key = in.nextInt();
-        int l = n.length();
-        int i;char sep, store;
-        for(i = 0; i<l; i++)
+        int len = n.length();
+        int i;char sep;
+        for(i = 0; i<len; i++)
         {
             sep = n.charAt(i);
-            store = library(sep, l, key);
+            library(sep, len, key);
         }
+        in.close();
     }
 }
 
