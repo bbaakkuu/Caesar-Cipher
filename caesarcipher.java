@@ -5,10 +5,10 @@ public class caesarcipher
 {
     private char [] alpha = {'A','B','C','D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' '};
     private int []encrpt;
+
     void Setter_encrpt(int l){
         encrpt = new int[l];
     }
-    
 
     static void library(char x, int len, int key){
         caesarcipher cc = new caesarcipher();
@@ -26,10 +26,17 @@ public class caesarcipher
                 }
             }
         }
+        setup(cc.encrpt, len);
     }
-    static char[] setup(int []arr){
-        
-        return null;
+    static char[] setup(int []arr, int l){
+        caesarcipher cc = new caesarcipher();
+        char []re = new char[l];
+        int i=0;
+        for(int n: arr){
+            re[i] = cc.alpha[n];
+            i++;
+        }
+        return re;
     }
     public static void main(String[] args) 
     {
