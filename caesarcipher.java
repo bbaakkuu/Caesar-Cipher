@@ -1,12 +1,14 @@
-//I have looked over and its certainly possible to make a caesar cipher with shifts chosen by the user
+//I have looked over and its certainly possible to make a caesar cipher with shifts chosen by the user.
+// MAXIMUM SHIFTS CAN BE 25
 import java.util.Scanner;
 public class caesarcipher
 {
     private char [] alpha = {'A','B','C','D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' '};
     private int []encrpt;
-    void Setter_encrpt(int len){
-        encrpt = new int [len];
+    void Setter_encrpt(int l){
+        encrpt = new int[l];
     }
+    
 
     static void library(char x, int len, int key){
         caesarcipher cc = new caesarcipher();
