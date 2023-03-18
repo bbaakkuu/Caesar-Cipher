@@ -7,7 +7,8 @@ public class caesarcipher
         String cipher = "";
         x = x.toUpperCase();
         char e = 'A';
-        for (int i=0; i<x.length(); i++) {
+        for (int i=0; i<x.length(); i++) 
+        {
             e = x.charAt(i);
             if (Character.isLetter(e))
                 e = (char) ('A' + (e - 'A' + key) % 26);
