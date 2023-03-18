@@ -26,7 +26,6 @@ public class caesarcipher
         int key = in.nextInt();
         String cipher = cc.library(n, key);
         System.out.println(cipher);
-        in.close();
     }
 }
 
