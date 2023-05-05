@@ -1,4 +1,3 @@
-//I have looked over and its certainly possible to make a caesar cipher with shifts chosen by the user.
 // MAXIMUM SHIFTS CAN BE 25
 import java.util.Scanner;
 public class caesarcipher
@@ -28,9 +27,3 @@ public class caesarcipher
         System.out.println(cipher);
     }
 }
-
-/*
- * for(int ele: arr){
- *
- * }
- */
